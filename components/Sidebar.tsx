@@ -45,12 +45,8 @@ export function Sidebar() {
         <NavItem href="/" icon={<House />} label="Home" active={pathname === "/"} />
         <NavItem href="/about" icon={<User />} label="About" active={pathname === "/about"} />
         <NavItem href="/achievements" icon={<Medal />} label="Achievements" active={pathname === "/achievements"} />
-        <NavItem href="#" icon={<Stack />} label="Projects" />
-        <NavItem href="#" icon={<ChatCircleDots />} label="Guestbook" />
-        <NavItem href="#" icon={<Laptop />} label="Uses" />
-        <NavItem href="#" icon={<Envelope />} label="Contact" />
-        <NavItem href="#" icon={<LinkIcon />} label="Links" />
-        <NavItem href="#" icon={<WarningCircle />} label="Changelog" />
+        <NavItem href="/projects" icon={<Stack />} label="Projects" active={pathname === "/projects"} />
+        <NavItem href="/contact" icon={<Envelope />} label="Contact" />
       </nav>
 
       {/* Footer */}
