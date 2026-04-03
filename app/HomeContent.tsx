@@ -1,182 +1,239 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Card, CardContent } from "@/components/ui/card";
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import {
   Code,
-  CodeBlock,
   FileHtml,
   FileCss,
   Atom,
   Database,
   PaintBrush,
+  GithubLogo,
+  ArrowSquareOut,
+  CodeBlock,
+  Envelope,
+  Calendar
 } from "@phosphor-icons/react";
 
-// 1. DATA: Kita pindahkan semua data ke satu array dengan kategori tambahan
+// ================= DATA =================
 const SKILLS_DATA = [
-  {
-    icon: <FileHtml className="text-orange-600" />,
-    label: "HTML",
-    className: "bg-orange-100 text-orange-700",
-    category: "Frontend",
-  },
-  {
-    icon: <FileCss className="text-blue-600" />,
-    label: "CSS",
-    className: "bg-blue-100 text-blue-700",
-    category: "Frontend",
-  },
-  {
-    icon: <PaintBrush className="text-cyan-600" />,
-    label: "TailwindCSS",
-    className: "bg-cyan-100 text-cyan-700",
-    category: "Frontend",
-  },
-  {
-    icon: <CodeBlock className="text-yellow-600" />,
-    label: "JavaScript",
-    className: "bg-yellow-100 text-yellow-700",
-    category: "Main",
-  },
-  {
-    icon: <CodeBlock className="text-blue-700" />,
-    label: "TypeScript",
-    className: "bg-blue-50 text-blue-800",
-    category: "Main",
-  },
-  {
-    icon: <Atom className="text-cyan-500" />,
-    label: "React.js",
-    className: "bg-cyan-50 text-cyan-800",
-    category: "Main",
-  },
-  {
-    icon: <span className="font-bold">N</span>,
-    label: "Next.js",
-    className: "bg-neutral-100 text-neutral-800",
-    category: "Main",
-  },
-  {
-    icon: <Database className="text-green-600" />,
-    label: "Node.js",
-    className: "bg-green-100 text-green-800",
-    category: "Backend",
-  },
-  {
-    icon: <Database className="text-blue-500" />,
-    label: "PostgreSQL",
-    className: "bg-blue-50 text-blue-700",
-    category: "Database",
-  },
+  { icon: <FileHtml className="text-orange-600" />, label: "HTML", className: "bg-orange-100 text-orange-700", category: "Frontend" },
+  { icon: <FileCss className="text-blue-600" />, label: "CSS", className: "bg-blue-100 text-blue-700", category: "Frontend" },
+  { icon: <PaintBrush className="text-cyan-600" />, label: "TailwindCSS", className: "bg-cyan-100 text-cyan-700", category: "Frontend" },
+  { icon: <CodeBlock className="text-yellow-600" />, label: "JavaScript", className: "bg-yellow-100 text-yellow-700", category: "Main" },
+  { icon: <CodeBlock className="text-blue-700" />, label: "TypeScript", className: "bg-blue-50 text-blue-800", category: "Main" },
+  { icon: <Atom className="text-cyan-500" />, label: "React.js", className: "bg-cyan-50 text-cyan-800", category: "Main" },
+  { icon: <span className="font-bold">N</span>, label: "Next.js", className: "bg-neutral-100 text-neutral-800", category: "Main" },
+  { icon: <Database className="text-green-600" />, label: "Node.js", className: "bg-green-100 text-green-800", category: "Backend" },
+  { icon: <Database className="text-blue-500" />, label: "PostgreSQL", className: "bg-blue-50 text-blue-700", category: "Database" },
 ];
 
 const CATEGORIES = ["Semua", "Main", "Frontend", "Backend", "Database"];
 
+// ================= MAIN COMPONENT =================
 export function HomeContent() {
-  // 2. STATE: Mengelola kategori filter yang aktif
   const [activeCategory, setActiveCategory] = useState("Semua");
 
-  // 3. LOGIC: Filter data berdasarkan kategori yang dipilih
-  const filteredSkills =
-    activeCategory === "Semua"
-      ? SKILLS_DATA
-      : SKILLS_DATA.filter((skill) => skill.category === activeCategory);
+  const filteredSkills = activeCategory === "Semua"
+    ? SKILLS_DATA
+    : SKILLS_DATA.filter((s) => s.category === activeCategory);
 
   return (
     <div className="p-8 md:p-12 pb-24 space-y-12">
       {/* 1. HERO SECTION */}
-      <section>
-        <h1 className="text-4xl font-bold tracking-tight mb-4 text-foreground">
-          Hi, I'm Reyhan Maulana
-        </h1>
-        <div className="flex items-center gap-4 text-muted-foreground mb-6 text-sm">
-          <span className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-muted-foreground"></span>
-            Based in Indonesia{" "}
-            <Badge variant="secondary" className="ml-1">
-              ID
-            </Badge>
-          </span>
-          <span className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-muted-foreground"></span>
-            Onsite
-          </span>
-        </div>
-        <div className="text-muted-foreground leading-relaxed space-y-4 max-w-3xl">
-          <p>
-            A Fullstack Developer and coding content creator dedicated to
-            building impactful digital solutions. I specialize in developing
-            scalable web platforms and applications using a modern tech stack,
-            primarily Next.js, React, and Node.js.
-          </p>
-        </div>
+      <section className="space-y-4">
+        <h1 className="text-4xl font-bold tracking-tight">Hi, saya Reyhan Maulana</h1>
+        <p className="text-muted-foreground max-w-2xl leading-relaxed">
+         Seorang Software Engineer yang berdedikasi dalam membangun solusi digital berdampak luas. Saya spesialis dalam mengembangkan platform web skalabel menggunakan Laravel dan Next.js, serta aplikasi mobile multi-platform berbasis Flutter.
+
+Fokus utama saya adalah merancang arsitektur perangkat lunak yang terstruktur, mudah dipelihara, dan selaras dengan tujuan bisnis. Saya memadukan keahlian teknis dengan komunikasi proaktif untuk memastikan setiap proyek memberikan kejelasan logika serta dampak nyata bagi pengguna.
+        </p>
       </section>
 
       <Separator />
 
       {/* 2. SKILLS SECTION */}
-      <section>
-        <div className="mb-6">
-          <h2 className="text-2xl font-semibold flex items-center gap-2 mb-1">
-            <Code weight="bold" /> Skills
-          </h2>
-          <p className="text-muted-foreground text-sm">
-            Pilih kategori untuk memfilter.
-          </p>
-        </div>
+      <section className="space-y-6">
+        <h2 className="text-2xl font-semibold flex items-center gap-2">
+          <Code weight="bold" /> Skills
+        </h2>
 
-        {/* Filters Area */}
-        <nav className="flex flex-wrap gap-2 mb-8">
+        {/* Filter Badges */}
+        <div className="flex gap-2 flex-wrap">
           {CATEGORIES.map((cat) => (
             <FilterBadge
               key={cat}
               label={cat}
               active={activeCategory === cat}
-              onClick={() => setActiveCategory(cat)} // Update state saat diklik
+              onClick={() => setActiveCategory(cat)}
             />
           ))}
-        </nav>
+        </div>
 
-        {/* 4. RENDER DATA: Hasil mapping data yang sudah difilter */}
-        <div className="flex flex-wrap gap-2 min-h-[100px]">
-          {filteredSkills.map((skill, index) => (
-            <SkillPill
-              key={index}
-              icon={skill.icon}
-              label={skill.label}
-              className={skill.className}
-            />
+        {/* Skill Pills */}
+        <div className="flex flex-wrap gap-4">
+          {filteredSkills.map((skill, i) => (
+            <SkillPill key={i} {...skill} />
           ))}
+        </div>
+      </section>
+
+      <Separator />
+
+      {/* 3. GITHUB ACTIVITY SECTION (Polished Style) */}
+      <GithubActivitySection username="rerey155-del" />
+
+      <section className="pt-6">
+        <div className="relative overflow-hidden bg-gradient-to-br from-zinc-50 to-zinc-100 dark:from-zinc-900 dark:to-zinc-950 p-8 md:p-12 rounded-2xl border border-zinc-200 dark:border-zinc-800 text-center space-y-6 shadow-sm">
+          {/* Subtle Background Pattern */}
+          <div className="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
+            <Atom size={200} weight="bold" />
+          </div>
+          <div className="space-y-3 relative z-10">
+            <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Ready to Collaborate?</h2>
+            <p className="text-muted-foreground max-w-lg mx-auto text-sm md:text-base">
+              I'm always interested in hearing about new projects and opportunities. 
+              Let's create something amazing together!
+            </p>
+          </div>
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 relative z-10 pt-4">
+            <a 
+              href="mailto:reyhan@example.com"
+              className="w-full sm:w-auto flex items-center justify-center gap-2 bg-zinc-900 dark:bg-zinc-100 text-zinc-100 dark:text-zinc-900 px-6 py-3 rounded-full font-bold text-sm transition-all hover:scale-105 active:scale-95 shadow-lg"
+            >
+              <Envelope size={20} weight="bold" /> Send an Email
+            </a>
+            <button className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 px-6 py-3 rounded-full font-bold text-sm transition-all hover:bg-zinc-50 dark:hover:bg-zinc-700 hover:scale-105 active:scale-95 shadow-sm">
+              <Calendar size={20} weight="bold" /> Schedule a Call
+            </button>
+          </div>
         </div>
       </section>
     </div>
   );
 }
 
-// ==========================================
-// Sub-Komponen (Helper)
-// ==========================================
+// ================= HELPERS (AT THE BOTTOM) =================
 
-function FilterBadge({
-  label,
-  active,
-  onClick,
-}: {
-  label: string;
-  active?: boolean;
-  onClick: () => void;
-}) {
+function GithubActivitySection({ username }: { username: string }) {
+  const [data, setData] = useState<any>(null);
+
+  useEffect(() => {
+    // API v4 jogruber (Stabil & Support banyak kontribusi)
+    fetch(`https://github-contributions-api.jogruber.de/v4/${username}`)
+      .then((res) => res.json())
+      .then(setData)
+      .catch(console.error);
+  }, [username]);
+
+  if (!data) return <div className="py-20 text-center animate-pulse text-muted-foreground italic">Fetching coding activity...</div>;
+
+  const currentYear = new Date().getFullYear();
+  const total = typeof data.total === "object" ? data.total?.[currentYear] ?? 0 : data.total ?? 0;
+  
+  // Ambil kontribusi tahun ini
+  const currentYearData = data.contributions.filter((d: any) => d.date.startsWith(currentYear.toString()));
+  
+  // Logic Grouping per Minggu (7 Hari)
+  const weeks: any[] = [];
+  for (let i = 0; i < currentYearData.length; i += 7) {
+    weeks.push(currentYearData.slice(i, i + 7));
+  }
+
+  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+  return (
+    <section className="space-y-4">
+      {/* Header Info */}
+      <div className="flex justify-between items-center px-1">
+        <h2 className="text-base font-semibold text-foreground">
+          {total} contributions in {currentYear}
+        </h2>
+      </div>
+
+      {/* GitHub Card (Original Style) */}
+      <Card className="border border-border/60 bg-[#0d1117] text-[#c9d1d9] overflow-hidden shadow-sm">
+        <CardContent className="p-5">
+          <div className="overflow-x-auto pb-2 scrollbar-hide">
+            <div className="flex items-start">
+              {/* Day Labels */}
+              <div className="flex flex-col justify-around text-[10px] text-muted-foreground mr-3 mt-7 h-[85px] shrink-0">
+                <span>Mon</span>
+                <span>Wed</span>
+                <span>Fri</span>
+              </div>
+
+              <div className="space-y-2">
+                {/* Month Labels */}
+                <div className="flex text-[10px] text-muted-foreground ml-1">
+                  {months.map((m, i) => (
+                    <div key={i} className="min-w-[44px]">{m}</div>
+                  ))}
+                </div>
+
+                {/* Grid Dots */}
+                <div className="flex gap-[3px]">
+                  {weeks.map((week, i) => (
+                    <div key={i} className="flex flex-col gap-[3px]">
+                      {week.map((day: any, j: number) => (
+                        <div
+                          key={j}
+                          className={`w-[11px] h-[11px] rounded-[2px] ${getGitHubColor(day.level)} hover:ring-1 hover:ring-white transition-all cursor-help`}
+                          title={`${day.date}: ${day.count} contributions`}
+                        />
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Footer Card */}
+          <div className="flex justify-between items-center pt-4 mt-2">
+             <a href="https://github.com/rerey155-del" 
+                target="_blank" 
+                className="text-[11px] text-muted-foreground hover:text-blue-400 transition-colors">
+                Learn how we count contributions
+             </a>
+             
+             <div className="flex items-center gap-1.5 text-[11px] text-muted-foreground font-medium">
+               <span>Less</span>
+               <div className="flex gap-[3px]">
+                 {[0, 1, 2, 3, 4].map(l => <div key={l} className={`w-[11px] h-[11px] rounded-[2px] ${getGitHubColor(l)}`} />)}
+               </div>
+               <span>More</span>
+             </div>
+          </div>
+        </CardContent>
+      </Card>
+      
+     
+    </section>
+  );
+}
+
+function getGitHubColor(level: number) {
+  const colors = [
+    "bg-[#161b22]", // 0
+    "bg-[#0e4429]", // 1
+    "bg-[#006d32]", // 2
+    "bg-[#26a641]", // 3
+    "bg-[#39d353]", // 4
+  ];
+  return colors[level] || colors[0];
+}
+
+function FilterBadge({ label, active, onClick }: any) {
   return (
     <button onClick={onClick} className="transition-all active:scale-95">
       <Badge
         variant={active ? "default" : "outline"}
-        className={`rounded-full px-4 py-1.5 text-xs cursor-pointer ${
-          active
-            ? "bg-yellow-400 text-yellow-900 border-transparent hover:bg-yellow-500 shadow-sm"
-            : "text-muted-foreground hover:bg-muted border-border/60"
+        className={`rounded-full px-4 py-1.5 text-xs font-medium cursor-pointer shadow-sm ${
+          active ? "bg-yellow-400 text-yellow-900 hover:bg-yellow-500 border-transparent" : "text-muted-foreground hover:bg-muted"
         }`}
       >
         {label}
@@ -185,42 +242,13 @@ function FilterBadge({
   );
 }
 
-function SkillPill({
-  icon,
-  label,
-  className,
-}: {
-  icon: React.ReactNode;
-  label: string;
-  className?: string;
-}) {
+function SkillPill({ icon, label, className }: any) {
   return (
     <Badge
       variant="outline"
-      className={`rounded-full px-3 py-1.5 text-sm gap-2 font-medium border-transparent shadow-sm ${className}`}
+      className={`rounded-full px-5 py-2.5 text-sm gap-3 font-medium border-transparent shadow-sm bg-card hover:bg-muted/50 transition-colors ${className}`}
     >
       {icon} {label}
     </Badge>
-  );
-}
-
-function CreationCard({
-  title,
-  desc,
-  gradient,
-}: {
-  title: string;
-  desc: string;
-  gradient: string;
-}) {
-  return (
-    <Card
-      className={`w-[250px] h-[320px] rounded-xl overflow-hidden border-none text-white ${gradient} flex flex-col justify-end p-4 shrink-0 transition-transform hover:scale-[1.02] duration-300`}
-    >
-      <CardContent className="p-0">
-        <h3 className="font-bold text-lg leading-tight mb-1">{title}</h3>
-        <p className="text-sm opacity-90">{desc}</p>
-      </CardContent>
-    </Card>
   );
 }

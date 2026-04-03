@@ -21,7 +21,8 @@ const CAREER_DATA = [
     duration: "8 Bulan",
     type: "Full-time",
     workplace: "Hybrid",
-    description: "Membangun sistem backend skala besar dan integrasi frontend modern."
+    description:
+      "Membangun sistem backend skala besar dan integrasi frontend modern.",
   },
   {
     id: 2,
@@ -34,7 +35,8 @@ const CAREER_DATA = [
     duration: "6 Bulan",
     type: "Internship",
     workplace: "Remote",
-    description: "Fokus pada pengembangan UI/UX menggunakan React dan TailwindCSS."
+    description:
+      "Fokus pada pengembangan UI/UX menggunakan React dan TailwindCSS.",
   },
 ];
 
@@ -70,10 +72,27 @@ export default function AboutPage() {
         </div>
         <div className="border-t border-dashed border-border my-6"></div>
         <div className="space-y-4 text-sm leading-relaxed text-foreground/90">
-          <p>Saya Reyhan Maulana, seorang Software Engineer yang berdedikasi.</p>
+          <p>
+            Halo, saya Reyhan Maulana, seorang Software Engineer yang
+            berdedikasi untuk menciptakan solusi digital berdampak luas. Saya
+            spesialis dalam membangun platform web dan aplikasi mobile
+            menggunakan teknologi modern, termasuk Laravel, Next.js, dan
+            pengembangan lintas platform dengan Flutter. Fokus utama saya bukan
+            sekadar membuat kode yang berjalan, melainkan merancang arsitektur
+            perangkat lunak yang terstruktur, mudah dipelihara, dan skalabel
+            untuk memenuhi kebutuhan bisnis. Saya percaya bahwa kode berkualitas
+            tinggi harus berjalan selaras dengan efisiensi sistem dan kejelasan
+            logika. Saya memadukan keahlian teknis dengan komunikasi proaktif,
+            pola pikir kritis, dan manajemen waktu yang efektif. Saya terbiasa
+            bekerja dalam lingkungan kolaboratif dan memanfaatkan kemampuan
+            kepemimpinan untuk memastikan setiap proyek memberikan hasil optimal
+            serta dampak nyata bagi pengguna.
+          </p>
           <div className="pt-4">
             <p className="mb-2 text-muted-foreground">Salam hangat,</p>
-            <span className="font-serif italic text-4xl font-bold text-yellow-400">Rerey</span>
+            <span className="font-serif italic text-4xl font-bold text-yellow-400">
+              Rerey
+            </span>
           </div>
         </div>
       </section>
@@ -84,7 +103,9 @@ export default function AboutPage() {
           <h2 className="text-xl font-bold flex items-center gap-2">
             <Briefcase weight="bold" /> Karir
           </h2>
-          <p className="text-muted-foreground mt-1 text-sm">Klik untuk melihat detail pekerjaan.</p>
+          <p className="text-muted-foreground mt-1 text-sm">
+            Klik untuk melihat detail pekerjaan.
+          </p>
         </div>
         <div className="space-y-4">
           {CAREER_DATA.map((job) => (
@@ -114,13 +135,13 @@ export default function AboutPage() {
 // Sub-Komponen dengan Logic State
 // ==========================================
 
-function CareerCard({ job }: { job: typeof CAREER_DATA[0] }) {
+function CareerCard({ job }: { job: (typeof CAREER_DATA)[0] }) {
   // STATE: Untuk mengontrol detail yang terbuka
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div 
-      className={`border border-border/60 rounded-xl p-5 transition-all cursor-pointer hover:border-primary/30 ${isOpen ? 'bg-muted/30 shadow-sm' : 'hover:bg-muted/10'}`}
+    <div
+      className={`border border-border/60 rounded-xl p-5 transition-all cursor-pointer hover:border-primary/30 ${isOpen ? "bg-muted/30 shadow-sm" : "hover:bg-muted/10"}`}
       onClick={() => setIsOpen(!isOpen)}
     >
       <div className="flex gap-4">
@@ -130,13 +151,19 @@ function CareerCard({ job }: { job: typeof CAREER_DATA[0] }) {
         <div className="flex-1">
           <div className="flex justify-between items-start">
             <h3 className="font-semibold text-sm md:text-base">{job.title}</h3>
-            {isOpen ? <CaretDown weight="bold" className="text-muted-foreground" /> : <CaretRight weight="bold" className="text-muted-foreground" />}
+            {isOpen ? (
+              <CaretDown weight="bold" className="text-muted-foreground" />
+            ) : (
+              <CaretRight weight="bold" className="text-muted-foreground" />
+            )}
           </div>
           <p className="text-xs text-muted-foreground mt-1">
             {job.company} • {job.location}
           </p>
           <div className="flex flex-wrap items-center gap-1.5 text-[11px] text-muted-foreground mt-2">
-            <span>{job.startDate} - {job.endDate}</span>
+            <span>
+              {job.startDate} - {job.endDate}
+            </span>
             <span className="w-1 h-1 rounded-full bg-muted-foreground/30"></span>
             <span>{job.duration}</span>
             <span className="w-1 h-1 rounded-full bg-muted-foreground/30"></span>
@@ -157,7 +184,14 @@ function CareerCard({ job }: { job: typeof CAREER_DATA[0] }) {
   );
 }
 
-function EducationCard({ logo, institution, degree, gpa, years, location }: any) {
+function EducationCard({
+  logo,
+  institution,
+  degree,
+  gpa,
+  years,
+  location,
+}: any) {
   return (
     <div className="border border-border/60 rounded-xl p-5 flex gap-4 bg-card/50">
       <div className="w-14 h-14 rounded-md border flex items-center justify-center text-2xl shrink-0">
@@ -165,7 +199,10 @@ function EducationCard({ logo, institution, degree, gpa, years, location }: any)
       </div>
       <div className="flex-1">
         <h3 className="font-semibold text-sm md:text-base">{institution}</h3>
-        <p className="text-xs text-muted-foreground mt-1">{degree} • <span className="font-medium text-foreground/70">{gpa}</span></p>
+        <p className="text-xs text-muted-foreground mt-1">
+          {degree} •{" "}
+          <span className="font-medium text-foreground/70">{gpa}</span>
+        </p>
         <div className="flex items-center gap-1.5 text-[11px] text-muted-foreground mt-2">
           <span>{years}</span>
           <span className="w-1 h-1 rounded-full bg-muted-foreground/30"></span>
