@@ -30,14 +30,6 @@ export function Sidebar() {
           <span className="w-2 h-2 rounded-full bg-yellow-500 mr-2"></span>
           Hire Me
         </Button>
-
-        {/* Theme Toggles Dummy */}
-        <div className="flex bg-muted rounded-full p-1 mb-4">
-          <Button variant="ghost" size="icon" className="h-7 w-7 rounded-full bg-background shadow-sm"><Sun /></Button>
-          <Button variant="ghost" size="icon" className="h-7 w-7 rounded-full"><Moon /></Button>
-          <Button variant="ghost" size="icon" className="h-7 w-7 rounded-full"><Lightning /></Button>
-          <Button variant="ghost" size="icon" className="h-7 w-7 rounded-full"><Heart /></Button>
-        </div>
       </div>
 
       {/* Navigation */}
