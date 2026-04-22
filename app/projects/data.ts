@@ -38,11 +38,11 @@ export const PROJECTS_DATA: ProjectData[] = [
     description:
       "Sistem Manajemen Sekolah berbasis web modern yang dibangun menggunakan Decouple Architecture. Sistem ini dirancang untuk mengelola berbagai entitas sekolah seperti Guru, Siswa, Kelas, Mata Pelajaran, jabwal, hingga Log Aktivitas dan sistem pengumuman terpusat yang memanfaatkan teknologi Apache Kafka. ",
 
-    image: "/MicroSayur1.png",
-    images: ["/MicroSayur1.png", "/MicroSayur2.png", "/MicroSayur3.png"],
+    image: "/manajemen1.png",
+    images: ["/manajemen1.png", "/manajemen2.png", "/manajemen3.png"],
     type: "Web",
     category: "E-commerce",
-    tech: ["Vue.js", "Vite", "Nuxt.js", "MySQL", "Tailwind css"],
+    tech: ["Decoupled Architecture", "Vue.js", "Vite", "MySQL", "Tailwind css"],
     link: "#",
     github: "#",
     isFeatured: true,
