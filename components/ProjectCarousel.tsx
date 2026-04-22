@@ -32,7 +32,7 @@ export function ProjectCarousel({ images, title }: ProjectCarouselProps) {
       >
         {images.map((image, index) => (
           <div key={image} className="h-full w-full flex-shrink-0">
-            <img src={image} alt={`${title} screenshot ${index + 1}`} className="h-full w-full object-cover" />
+            <img src={image} alt={`${title} screenshot ${index + 1}`} className="h-full w-full object-fit" />
           </div>
         ))}
       </div>

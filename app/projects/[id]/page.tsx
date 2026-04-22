@@ -39,8 +39,8 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         <p className="text-muted-foreground max-w-2xl leading-relaxed">{project.description}</p>
       </section>
 
-      <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr]">
-        <Card className="overflow-hidden border border-border/50 bg-card">
+      <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr] ">
+        <Card className="overflow-hidden border border-border/50 bg-card w-[46rem]">
           <ProjectCarousel images={carouselImages} title={project.title} />
           <CardContent className="space-y-6 p-6">
             <section className="space-y-2">
@@ -85,8 +85,8 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           </CardContent>
         </Card>
 
-        <div className="space-y-4">
-          <Card className="border border-border/50 bg-card p-6">
+        <div className="space-y-4 ">
+          <Card className="border border-border/50 bg-card p-6 w-[18rem]">
             <h2 className="text-lg font-semibold mb-3">Apa yang ditampilkan</h2>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li className="flex items-start gap-2">
