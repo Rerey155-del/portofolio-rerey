@@ -6,9 +6,9 @@ export default function ProjectsPage() {
   return (
     <div className="p-8 md:p-12 pb-24 space-y-10">
       <section>
-        <h1 className="text-3xl font-bold tracking-tight mb-2">Proyek MicroSayur</h1>
+        <h1 className="text-3xl font-bold tracking-tight mb-2">Project Us</h1>
         <p className="text-muted-foreground text-sm max-w-2xl leading-relaxed">
-          Menampilkan tiga tampilan MicroSayur dengan satu screenshot beranda sebagai thumbnail utama untuk mendeskripsikan keseluruhan proyek.
+          Berikut ini adalah beberapa proyek yang telah kami bikin sebagai bahan portofolio kami. Proyek-proyek ini dapat memberikan gambaran tentang kemampuan teknis dan kreativitas kami dalam mengembangkan solusi digital.
         </p>
       </section>
 
@@ -53,15 +53,6 @@ function ProjectCard({ project }: { project: typeof PROJECTS_DATA[0] }) {
               {t}
             </Badge>
           ))}
-        </div>
-
-        <div className="flex items-center justify-between pt-4 border-t border-muted text-[10px] text-muted-foreground font-bold uppercase tracking-widest">
-          <div className="flex items-center gap-3">
-            <span>{project.type}</span>
-            <span className="w-1 h-1 rounded-full bg-muted-foreground/30" />
-            <span>{project.category}</span>
-          </div>
-          <span className="text-xs text-primary">Lihat detail</span>
         </div>
       </CardContent>
     </a>
