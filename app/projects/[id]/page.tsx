@@ -53,8 +53,8 @@ export default async function ProjectDetailPage({
         </p>
       </section>
 
-      <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr] ">
-        <Card className="overflow-hidden border border-border/50 bg-card w-[46rem]">
+      <div className="grid gap-8">
+        <Card className="overflow-hidden border border-border/50 bg-card">
           <ProjectCarousel images={carouselImages} title={project.title} />
           <CardContent className="space-y-6 p-6">
             <section className="space-y-2">
@@ -121,15 +121,23 @@ export default async function ProjectDetailPage({
           </CardContent>
         </Card>
 
-        <div className="space-y-4 ">
-          <Card className="border border-border/50 bg-card p-6">
+        <div className="space-y-4">
+          <Card className="border border-border/50 bg-card p-6 md:p-8">
             <div className="text-sm text-muted-foreground mb-3">
               Project Info
             </div>
-            <div className="grid gap-3 text-sm">
+            <div className="grid gap-3 text-sm sm:grid-cols-3">
               <div className="rounded-2xl border border-border/60 bg-background p-4">
                 <p className="text-muted-foreground text-[11px]">ID Proyek</p>
                 <p className="mt-1 font-semibold">{project.id}</p>
+              </div>
+              <div className="rounded-2xl border border-border/60 bg-background p-4">
+                <p className="text-muted-foreground text-[11px]">Tipe</p>
+                <p className="mt-1 font-semibold">{project.type}</p>
+              </div>
+              <div className="rounded-2xl border border-border/60 bg-background p-4">
+                <p className="text-muted-foreground text-[11px]">Kategori</p>
+                <p className="mt-1 font-semibold">{project.category}</p>
               </div>
             </div>
           </Card>

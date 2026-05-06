@@ -4,7 +4,7 @@ import { PROJECTS_DATA } from "@/app/projects/data";
 
 export default function ProjectsPage() {
   return (
-    <div className="p-8 md:p-12 pb-24 space-y-10">
+    <div className="px-12 py-10 md:px-24 md:py-16 pb-28 space-y-12">
       <section>
         <h1 className="text-3xl font-bold tracking-tight mb-2">Project Us</h1>
         <p className="text-muted-foreground text-sm max-w-2xl leading-relaxed">
@@ -14,7 +14,7 @@ export default function ProjectsPage() {
 
       <div className="border-t border-dashed border-border" />
 
-      <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+      <section className="grid grid-cols-1 gap-8">
         {PROJECTS_DATA.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}
@@ -27,9 +27,9 @@ function ProjectCard({ project }: { project: typeof PROJECTS_DATA[0] }) {
   return (
     <a
       href={`/projects/${project.id}`}
-      className="group block overflow-hidden rounded-3xl border border-border/50 bg-card hover:shadow-xl hover:border-primary/20 transition-all duration-300"
+      className="group grid overflow-hidden rounded-3xl border border-border/50 bg-card hover:shadow-xl hover:border-primary/20 transition-all duration-300 md:grid-cols-[minmax(280px,42%)_1fr]"
     >
-      <div className="relative h-56 overflow-hidden bg-muted">
+      <div className="relative h-64 overflow-hidden bg-muted md:h-full md:min-h-72">
         <img
           src={project.image}
           alt={project.title}
@@ -37,7 +37,7 @@ function ProjectCard({ project }: { project: typeof PROJECTS_DATA[0] }) {
         />
       </div>
 
-      <CardContent className="p-6 space-y-4">
+      <CardContent className="px-10 py-8 space-y-5 md:px-12 md:py-10">
         <div>
           <div className="flex items-center gap-2 mb-2">
             <h3 className="text-xl font-bold group-hover:text-primary transition-colors">{project.title}</h3>
@@ -47,7 +47,7 @@ function ProjectCard({ project }: { project: typeof PROJECTS_DATA[0] }) {
           </p>
         </div>
 
-        <div className="flex flex-wrap gap-2 pt-2">
+        <div className="flex flex-wrap gap-2.5 pt-3">
           {project.tech.map((t) => (
             <Badge key={t} variant="secondary" className="bg-muted/50 text-[10px] font-mono px-2 py-0">
               {t}
