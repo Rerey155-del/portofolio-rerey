@@ -64,12 +64,12 @@ export const PROJECTS_DATA: ProjectData[] = [
     thumbnail: true,
   },
   {
-    id: 3,
+    id: 4,
     title: "Aplikasi Pengelola Sosmed UMKM - Kelolainaja",
     description:
       "Aplikasi berbasis web ini membantu pengguna untuk mengelola akun media sosial UMKM mereka dengan mudah. Dengan fitur-fitur seperti penjadwalan posting, analitik performa, dan manajemen konten, aplikasi ini dirancang untuk meningkatkan kehadiran online UMKM. Proyek ini dibangun menggunakan Laravel, Vite, Tailwind CSS, dan MySQL sebagai backend database.",
     image: "/kelolain.png",
-    images: ["/kelolain.png", "/kelolain2.png"],
+    images: ["/kelolain.png", "/kelolain2.png", "/kelolain3.png"],
     type: "Web",
     category: "Automotive Service",
     tech: ["Laravel", "Vite", "Tailwind CSS", "MySQL"],
