@@ -48,5 +48,20 @@ export const PROJECTS_DATA: ProjectData[] = [
     isFeatured: true,
     thumbnail: true,
   },
+   {
+  id: 3,
+  title: "Aplikasi Bengkel Nexus",
+  description:
+    "Aplikasi bengkel berbasis web untuk membantu pengguna mencari rekomendasi bengkel, melihat daftar suku cadang, serta mengakses informasi layanan bengkel seperti alamat, jam operasional, kontak, dan detail produk. Project ini dibangun dengan React, Vite, Tailwind CSS, Express, dan MySQL sebagai backend database.",
+  image: "/nexus1.png",
+  images: ["/nexus1.png", "/nexus2.png"],
+  type: "Web",
+  category: "Automotive Service",
+  tech: ["React.js", "Vite", "Tailwind CSS", "Express.js", "MySQL"],
+  link: "#",
+  github: "#",
+  isFeatured: true,
+  thumbnail: true,
+}
 
 ];
