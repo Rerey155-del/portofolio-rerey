@@ -13,7 +13,7 @@ import {
   User,
   Medal,
   Stack,
-  List,
+  List, X,
   ChatCircleDots,
   Laptop,
   Envelope,
@@ -52,6 +52,10 @@ export function Sidebar() {
       <aside
         className={`fixed z-50 inset-y-0 left-0 w-[280px] bg-background border-r p-6 flex flex-col overflow-y-auto transform ${open ? "translate-x-0" : "-translate-x-full"} transition-transform duration-300 ease-in-out md:relative md:translate-x-0 md:flex`}
       >
+        {/* Close button for mobile */}
+        <button onClick={() => setOpen(false)} className="absolute top-4 right-4 text-muted-foreground hover:text-primary" aria-label="Close menu">
+          <X size={24} />
+        </button>
         {/* Profile Info */}
         <div className="flex flex-col items-center mb-6">
           <Avatar className="size-24 mb-3">
