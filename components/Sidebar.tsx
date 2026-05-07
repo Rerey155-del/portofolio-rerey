@@ -3,10 +3,10 @@
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { 
-  Checks, House, User, Medal, Stack, 
-  ChatCircleDots, Laptop, Envelope, 
-  Link as LinkIcon, WarningCircle, Sun, Moon, 
+import {
+  Checks, House, User, Medal, Stack,
+  ChatCircleDots, Laptop, Envelope,
+  Link as LinkIcon, WarningCircle, Sun, Moon,
   Lightning, Heart
 } from "@phosphor-icons/react";
 import Link from "next/link";
@@ -20,7 +20,7 @@ export function Sidebar() {
       {/* Profile Info */}
       <div className="flex flex-col items-center mb-6">
         <Avatar className="w-24 h-24 mb-3">
-          <AvatarImage src="https://github.com/shadcn.png" />
+          <AvatarImage src="/avatar.jpeg" />
           <AvatarFallback>RM</AvatarFallback>
         </Avatar>
         <div className="flex items-center gap-1 mb-2">
@@ -42,7 +42,7 @@ export function Sidebar() {
 
       {/* Footer */}
       <div className="mt-6 pt-6 border-t flex flex-col gap-3">
-        
+
         <div className="text-center text-xs text-muted-foreground mt-2">
           <p>COPYRIGHT © 2026</p>
           <p>Reyhan Maulana.</p>
