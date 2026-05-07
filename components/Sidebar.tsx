@@ -36,7 +36,6 @@ export function Sidebar() {
       <nav className="flex flex-col gap-1 flex-1">
         <NavItem href="/" icon={<House />} label="Home" active={pathname === "/"} />
         <NavItem href="/about" icon={<User />} label="About" active={pathname === "/about"} />
-        <NavItem href="/achievements" icon={<Medal />} label="Achievements" active={pathname === "/achievements"} />
         <NavItem href="/projects" icon={<Stack />} label="Projects" active={pathname === "/projects"} />
         <NavItem href="/contact" icon={<Envelope />} label="Contact" />
       </nav>
