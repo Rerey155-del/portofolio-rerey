@@ -78,4 +78,19 @@ export const PROJECTS_DATA: ProjectData[] = [
     isFeatured: true,
     thumbnail: true,
   },
+  {
+    id: 5,
+    title: "Web Company : UKM-IT Cybernetix",
+    description:
+      "Aplikasi berbasis web ini dirancang untuk mengatur dan mengelola berbagai data yang diperlukan oleh UKM IT Cybernetix di UPI YPTK. Sistem ini menyediakan fitur untuk mengatur data keanggotaan, data kegiatan, data inventaris, data absensi, data keuangan, dan data inventaris.",
+    image: "/cybernetix1.png",
+    images: ["/cybernetix1.png", "/cybernetix2.png", "/cybernetix3.png"],
+    type: "Web",
+    category: "Automotive Service",
+    tech: ["Laravel", "Vite", "Tailwind CSS", "MySQL"],
+    link: "#",
+    github: "#",
+    isFeatured: true,
+    thumbnail: true,
+  },
 ];
