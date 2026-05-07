@@ -19,7 +19,7 @@ export function Sidebar() {
     <aside className="w-[280px] border-r bg-background h-screen sticky top-0 p-6 flex flex-col overflow-y-auto hidden md:flex">
       {/* Profile Info */}
       <div className="flex flex-col items-center mb-6">
-        <Avatar className="w-24 h-24 mb-3">
+        <Avatar className="size-24 mb-3">
           <AvatarImage src="/avatar.jpeg" />
           <AvatarFallback>RM</AvatarFallback>
         </Avatar>
