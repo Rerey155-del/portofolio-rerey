@@ -5,10 +5,9 @@ import { useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { 
-  Checks, House, User, Medal, Stack, 
-  ChatCircleDots, Laptop, Envelope, peruba
-  Link as LinkIcon, WarningCircle, Sun, Moon, 
-  Lightning, Heart,
+  House, User, Medal, Stack, 
+  Envelope, Link as LinkIcon, 
+  
   List, X
 } from "@phosphor-icons/react";
 import Link from "next/link";
