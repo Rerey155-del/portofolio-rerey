@@ -74,7 +74,7 @@ export function Sidebar() {
         <nav className="flex flex-col gap-1 flex-1">
           <NavItem href="/" icon={<House />} label="Home" active={pathname === "/"} onClick={() => setIsOpen(false)} />
           <NavItem href="/about" icon={<User />} label="About" active={pathname === "/about"} onClick={() => setIsOpen(false)} />
-          <NavItem href="/achievements" icon={<Medal />} label="Achievements" active={pathname === "/achievements"} onClick={() => setIsOpen(false)} />
+         
           <NavItem href="/projects" icon={<Stack />} label="Projects" active={pathname === "/projects"} onClick={() => setIsOpen(false)} />
           <NavItem href="/contact" icon={<Envelope />} label="Contact" onClick={() => setIsOpen(false)} />
         </nav>
