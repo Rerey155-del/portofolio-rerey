@@ -8,12 +8,15 @@ import {
   Code,
   FileHtml,
   FileCss,
+  FileJs,
+  FileTs,
   Atom,
   Database,
   PaintBrush,
+  BracketsCurly,
+  Hexagon,
   GithubLogo,
   ArrowSquareOut,
-  CodeBlock,
   Envelope,
   Calendar
 } from "@phosphor-icons/react";
@@ -23,11 +26,13 @@ const SKILLS_DATA = [
   { icon: <FileHtml className="text-orange-600" />, label: "HTML", className: "bg-orange-100 text-orange-700", category: "Frontend" },
   { icon: <FileCss className="text-blue-600" />, label: "CSS", className: "bg-blue-100 text-blue-700", category: "Frontend" },
   { icon: <PaintBrush className="text-cyan-600" />, label: "TailwindCSS", className: "bg-cyan-100 text-cyan-700", category: "Frontend" },
-  { icon: <CodeBlock className="text-yellow-600" />, label: "JavaScript", className: "bg-yellow-100 text-yellow-700", category: "Main" },
-  { icon: <CodeBlock className="text-blue-700" />, label: "TypeScript", className: "bg-blue-50 text-blue-800", category: "Main" },
+  { icon: <BracketsCurly className="text-red-600" />, label: "Laravel", className: "bg-red-100 text-red-700", category: "Backend" },
+  { icon: <Atom className="text-emerald-600" />, label: "Vue.js", className: "bg-emerald-100 text-emerald-700", category: "Frontend" },
+  { icon: <FileJs className="text-yellow-600" />, label: "JavaScript", className: "bg-yellow-100 text-yellow-700", category: "Main" },
+  { icon: <FileTs className="text-blue-700" />, label: "TypeScript", className: "bg-blue-50 text-blue-800", category: "Main" },
   { icon: <Atom className="text-cyan-500" />, label: "React.js", className: "bg-cyan-50 text-cyan-800", category: "Main" },
   { icon: <span className="font-bold">N</span>, label: "Next.js", className: "bg-neutral-100 text-neutral-800", category: "Main" },
-  { icon: <Database className="text-green-600" />, label: "Node.js", className: "bg-green-100 text-green-800", category: "Backend" },
+  { icon: <Hexagon className="text-green-600" />, label: "Node.js", className: "bg-green-100 text-green-800", category: "Backend" },
   { icon: <Database className="text-blue-500" />, label: "PostgreSQL", className: "bg-blue-50 text-blue-700", category: "Database" },
 ];
 

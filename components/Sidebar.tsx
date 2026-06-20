@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import { 
   House, User, Medal, Stack, 
   Envelope, Link as LinkIcon, 
-  
   List, X
 } from "@phosphor-icons/react";
 import Link from "next/link";
@@ -59,7 +58,7 @@ export function Sidebar() {
         {/* Profile Info */}
         <div className="flex flex-col items-center mb-6 mt-8 md:mt-0">
           <Avatar className="w-24 h-24 mb-3">
-            <AvatarImage src="https://github.com/shadcn.png" />
+            <AvatarImage src="/avatar.jpeg" />
             <AvatarFallback>RM</AvatarFallback>
           </Avatar>
           <div className="flex items-center gap-1 mb-2">
