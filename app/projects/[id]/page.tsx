@@ -34,7 +34,7 @@ export default async function ProjectDetailPage({
 
   return (
     <div className="p-8 md:p-12 pb-24 space-y-8">
-      <div className="flex items-center gap-3 text-sm text-muted-foreground">
+      <div className="flex items-center gap-3 text-sm text-muted-foreground" data-aos="fade-down">
         <Link
           href="/projects"
           className="inline-flex items-center gap-2 text-primary hover:text-foreground transition-colors"
@@ -43,7 +43,7 @@ export default async function ProjectDetailPage({
         </Link>
       </div>
 
-      <section className="space-y-4">
+      <section className="space-y-4" data-aos="fade-up">
         <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">
           Detail Proyek
         </p>
@@ -54,7 +54,7 @@ export default async function ProjectDetailPage({
       </section>
 
       <div className="grid gap-8">
-        <Card className="overflow-hidden border border-border/50 bg-card">
+        <Card className="overflow-hidden border border-border/50 bg-card" data-aos="fade-up" data-aos-delay="100">
           <ProjectCarousel images={carouselImages} title={project.title} />
           <CardContent className="space-y-6 p-6">
             <section className="space-y-2">
@@ -121,7 +121,7 @@ export default async function ProjectDetailPage({
           </CardContent>
         </Card>
 
-        <div className="space-y-4">
+        <div className="space-y-4" data-aos="fade-up" data-aos-delay="200">
           <Card className="border border-border/50 bg-card p-6 md:p-8">
             <div className="text-sm text-muted-foreground mb-3">
               Project Info

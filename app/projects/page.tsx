@@ -5,7 +5,7 @@ import { PROJECTS_DATA } from "@/app/projects/data";
 export default function ProjectsPage() {
   return (
     <div className="px-12 py-10 md:px-24 md:py-16 pb-28 space-y-12">
-      <section>
+      <section data-aos="fade-up">
         <h1 className="text-3xl font-bold tracking-tight mb-2">Project Us</h1>
         <p className="text-muted-foreground text-sm max-w-2xl leading-relaxed">
           Berikut ini adalah beberapa proyek yang telah kami bikin sebagai bahan portofolio kami. Proyek-proyek ini dapat memberikan gambaran tentang kemampuan teknis dan kreativitas kami dalam mengembangkan solusi digital.
@@ -15,18 +15,20 @@ export default function ProjectsPage() {
       <div className="border-t border-dashed border-border" />
 
       <section className="grid grid-cols-1 gap-8">
-        {PROJECTS_DATA.map((project) => (
-          <ProjectCard key={project.id} project={project} />
+        {PROJECTS_DATA.map((project, index) => (
+          <ProjectCard key={project.id} project={project} index={index} />
         ))}
       </section>
     </div>
   );
 }
 
-function ProjectCard({ project }: { project: typeof PROJECTS_DATA[0] }) {
+function ProjectCard({ project, index = 0 }: { project: typeof PROJECTS_DATA[0]; index?: number }) {
   return (
     <a
       href={`/projects/${project.id}`}
+      data-aos="fade-up"
+      data-aos-delay={index * 150}
       className="group grid overflow-hidden rounded-3xl border border-border/50 bg-card hover:shadow-xl hover:border-primary/20 transition-all duration-300 md:grid-cols-[minmax(280px,42%)_1fr]"
     >
       <div className="relative h-64 overflow-hidden bg-muted md:h-full md:min-h-72">

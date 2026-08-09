@@ -15,8 +15,6 @@ import {
   PaintBrush,
   BracketsCurly,
   Hexagon,
-  GithubLogo,
-  ArrowSquareOut,
   Envelope,
   Calendar
 } from "@phosphor-icons/react";
@@ -49,7 +47,7 @@ export function HomeContent() {
   return (
     <div className="p-8 md:p-12 pb-24 space-y-12">
       {/* 1. HERO SECTION */}
-      <section className="space-y-4">
+      <section className="space-y-4" data-aos="fade-up">
         <h1 className="text-4xl font-bold tracking-tight">Hi, saya Reyhan Maulana</h1>
         <p className="text-muted-foreground max-w-2xl leading-relaxed">
          Seorang Software Engineer yang berdedikasi dalam membangun solusi digital berdampak luas. Saya spesialis dalam mengembangkan platform web skalabel menggunakan Laravel dan Next.js, serta aplikasi mobile multi-platform berbasis Flutter.
@@ -61,13 +59,13 @@ Fokus utama saya adalah merancang arsitektur perangkat lunak yang terstruktur, m
       <Separator />
 
       {/* 2. SKILLS SECTION */}
-      <section className="space-y-6">
+      <section className="space-y-6" data-aos="fade-up">
         <h2 className="text-2xl font-semibold flex items-center gap-2">
           <Code weight="bold" /> Skills
         </h2>
 
         {/* Filter Badges */}
-        <div className="flex gap-2 flex-wrap">
+        <div className="flex gap-2 flex-wrap" data-aos="fade-up" data-aos-delay="100">
           {CATEGORIES.map((cat) => (
             <FilterBadge
               key={cat}
@@ -81,7 +79,7 @@ Fokus utama saya adalah merancang arsitektur perangkat lunak yang terstruktur, m
         {/* Skill Pills */}
         <div className="flex flex-wrap gap-4">
           {filteredSkills.map((skill, i) => (
-            <SkillPill key={i} {...skill} />
+            <SkillPill key={i} index={i} {...skill} />
           ))}
         </div>
       </section>
@@ -89,9 +87,11 @@ Fokus utama saya adalah merancang arsitektur perangkat lunak yang terstruktur, m
       <Separator />
 
       {/* 3. GITHUB ACTIVITY SECTION (Polished Style) */}
-      <GithubActivitySection username="rerey155-del" />
+      <section data-aos="fade-up">
+        <GithubActivitySection username="rerey155-del" />
+      </section>
 
-      <section className="pt-6">
+      <section className="pt-6" data-aos="zoom-in">
         <div className="relative overflow-hidden bg-gradient-to-br from-zinc-50 to-zinc-100 dark:from-zinc-900 dark:to-zinc-950 p-8 md:p-12 rounded-2xl border border-zinc-200 dark:border-zinc-800 text-center space-y-6 shadow-sm">
           {/* Subtle Background Pattern */}
           <div className="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
@@ -247,10 +247,12 @@ function FilterBadge({ label, active, onClick }: any) {
   );
 }
 
-function SkillPill({ icon, label, className }: any) {
+function SkillPill({ icon, label, className, index }: any) {
   return (
     <Badge
       variant="outline"
+      data-aos="zoom-in"
+      data-aos-delay={(index % 6) * 50}
       className={`rounded-full px-5 py-2.5 text-sm gap-3 font-medium border-transparent shadow-sm bg-card hover:bg-muted/50 transition-colors ${className}`}
     >
       {icon} {label}

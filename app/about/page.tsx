@@ -77,7 +77,7 @@ export default function AboutPage() {
   return (
     <div className="p-8 md:p-12 pb-24 space-y-12">
       {/* SECTION TENTANG */}
-      <section>
+      <section data-aos="fade-up">
         <div className="mb-4">
           <h1 className="text-2xl font-bold tracking-tight">Tentang</h1>
           <p className="text-muted-foreground mt-1 text-sm">
@@ -112,7 +112,7 @@ export default function AboutPage() {
       </section>
 
       {/* SECTION KARIR - Dengan State Management di tiap card */}
-      <section>
+      <section data-aos="fade-up">
         <div className="mb-6">
           <h2 className="text-xl font-bold flex items-center gap-2">
             <Briefcase weight="bold" /> Karir
@@ -122,14 +122,14 @@ export default function AboutPage() {
           </p>
         </div>
         <div className="space-y-4">
-          {CAREER_DATA.map((job) => (
-            <CareerCard key={job.id} job={job} />
+          {CAREER_DATA.map((job, index) => (
+            <CareerCard key={job.id} job={job} index={index} />
           ))}
         </div>
       </section>
 
       {/* SECTION PENDIDIKAN */}
-      <section>
+      <section data-aos="fade-up">
         <div className="mb-6">
           <h2 className="text-xl font-bold flex items-center gap-2">
             <GraduationCap weight="bold" /> Pendidikan
@@ -137,7 +137,7 @@ export default function AboutPage() {
         </div>
         <div className="space-y-4">
           {EDUCATION_DATA.map((edu, index) => (
-            <EducationCard key={index} {...edu} />
+            <EducationCard key={index} index={index} {...edu} />
           ))}
         </div>
       </section>
@@ -149,12 +149,14 @@ export default function AboutPage() {
 // Sub-Komponen dengan Logic State
 // ==========================================
 
-function CareerCard({ job }: { job: (typeof CAREER_DATA)[0] }) {
+function CareerCard({ job, index = 0 }: { job: (typeof CAREER_DATA)[0]; index?: number }) {
   // STATE: Untuk mengontrol detail yang terbuka
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div
+      data-aos="fade-up"
+      data-aos-delay={index * 100}
       className={`border border-border/60 rounded-xl p-5 transition-all cursor-pointer hover:border-primary/30 ${isOpen ? "bg-muted/30 shadow-sm" : "hover:bg-muted/10"}`}
       onClick={() => setIsOpen(!isOpen)}
     >
@@ -205,9 +207,14 @@ function EducationCard({
   gpa,
   years,
   location,
+  index = 0,
 }: any) {
   return (
-    <div className="border border-border/60 rounded-xl p-5 flex gap-4 bg-card/50">
+    <div
+      data-aos="fade-up"
+      data-aos-delay={index * 100}
+      className="border border-border/60 rounded-xl p-5 flex gap-4 bg-card/50"
+    >
       <div className="w-14 h-14 rounded-md border flex items-center justify-center text-2xl shrink-0">
         {logo}
       </div>
