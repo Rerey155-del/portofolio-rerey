@@ -34,7 +34,10 @@ export default async function ProjectDetailPage({
 
   return (
     <div className="p-8 md:p-12 pb-24 space-y-8">
-      <div className="flex items-center gap-3 text-sm text-muted-foreground" data-aos="fade-down">
+      <div
+        className="flex items-center gap-3 text-sm text-muted-foreground"
+        data-aos="fade-down"
+      >
         <Link
           href="/projects"
           className="inline-flex items-center gap-2 text-primary hover:text-foreground transition-colors"
@@ -54,7 +57,11 @@ export default async function ProjectDetailPage({
       </section>
 
       <div className="grid gap-8">
-        <Card className="overflow-hidden border border-border/50 bg-card" data-aos="fade-up" data-aos-delay="100">
+        <Card
+          className="overflow-hidden border border-border/50 bg-card"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
           <ProjectCarousel images={carouselImages} title={project.title} />
           <CardContent className="space-y-6 p-6">
             <section className="space-y-2">
@@ -120,28 +127,6 @@ export default async function ProjectDetailPage({
             </div>
           </CardContent>
         </Card>
-
-        <div className="space-y-4" data-aos="fade-up" data-aos-delay="200">
-          <Card className="border border-border/50 bg-card p-6 md:p-8">
-            <div className="text-sm text-muted-foreground mb-3">
-              Project Info
-            </div>
-            <div className="grid gap-3 text-sm sm:grid-cols-3">
-              <div className="rounded-2xl border border-border/60 bg-background p-4">
-                <p className="text-muted-foreground text-[11px]">ID Proyek</p>
-                <p className="mt-1 font-semibold">{project.id}</p>
-              </div>
-              <div className="rounded-2xl border border-border/60 bg-background p-4">
-                <p className="text-muted-foreground text-[11px]">Tipe</p>
-                <p className="mt-1 font-semibold">{project.type}</p>
-              </div>
-              <div className="rounded-2xl border border-border/60 bg-background p-4">
-                <p className="text-muted-foreground text-[11px]">Kategori</p>
-                <p className="mt-1 font-semibold">{project.category}</p>
-              </div>
-            </div>
-          </Card>
-        </div>
       </div>
     </div>
   );

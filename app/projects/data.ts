@@ -107,4 +107,28 @@ export const PROJECTS_DATA: ProjectData[] = [
     isFeatured: true,
     thumbnail: true,
   },
+  {
+    id: 7,
+    title: "PlayHub - PlayStation Rental Management System",
+    description:
+      "Aplikasi manajemen rental PlayStation modern berbasis web yang dibangun menggunakan Laravel dan didesain dengan gaya visual Neobrutalism UI serta animasi interaktif AOS.js (Animate On Scroll).",
+    detail:
+      "Aplikasi ini menyediakan dua pengalaman utama: Portal Pengguna (Customer Portal) yang responsif dan interaktif untuk penyewaan unit di tempat (on-site), serta Dashboard Admin untuk mengelola inventaris unit PlayStation dan data transaksi booking.",
+    image: "/ps1.jpeg",
+    images: [
+      "/ps1.jpeg",
+      "/ps2.jpeg",
+      "/ps3.jpeg",
+      "/ps4.jpeg",
+      "/ps5.jpeg",
+      "/ps6.jpeg",
+    ],
+    type: "Web",
+    category: "Rental Management",
+    tech: ["Laravel", "Vite", "Tailwind CSS", "MySQL", "AOS.js"],
+    link: "#",
+    github: "#",
+    isFeatured: true,
+    thumbnail: true,
+  },
 ];

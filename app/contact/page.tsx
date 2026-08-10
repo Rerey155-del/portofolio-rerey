@@ -39,15 +39,6 @@ const SOCIALS_DATA = [
     icon: <LinkedinLogo size={60} weight="fill" />,
     gradient: "from-blue-600 to-blue-800",
   },
-  
-  {
-    title: "Explore the Code",
-    desc: "Explore my open-source work.",
-    cta: "Go to Github",
-    link: "https://github.com/username",
-    icon: <GithubLogo size={60} weight="fill" />,
-    gradient: "from-slate-900 to-slate-950",
-  },
 ];
 
 // ==========================================

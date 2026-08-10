@@ -26,7 +26,7 @@ const CAREER_DATA = [
   },
   {
     id: 3,
-    logo: "💻",
+    logo: "🏢",
     title: "Application Developer",
     company: "Inatechno Training Center",
     location: "Padang, Sumatera Barat",
@@ -40,7 +40,7 @@ const CAREER_DATA = [
   },
   {
     id: 4,
-    logo: "💻",
+    logo: "🏢",
     title: "Kasir/POS System Operator",
     company: "Nazea Mart",
     location: "Padang, Sumatera Barat",
