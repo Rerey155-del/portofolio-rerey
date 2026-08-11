@@ -50,7 +50,7 @@ export function HomeContent() {
       <section className="space-y-4" data-aos="fade-up">
         <h1 className="text-4xl font-bold tracking-tight">Hi, saya Reyhan Maulana</h1>
         <p className="text-muted-foreground max-w-2xl leading-relaxed">
-         Seorang Software Engineer yang berdedikasi dalam membangun solusi digital berdampak luas. Saya spesialis dalam mengembangkan platform web skalabel menggunakan Laravel dan Next.js, serta aplikasi mobile multi-platform berbasis Flutter.
+         Seorang Software Developer yang berdedikasi dalam membangun solusi digital berdampak luas. Saya spesialis dalam mengembangkan platform web skalabel menggunakan Laravel dan Next.js, serta aplikasi mobile multi-platform berbasis Flutter.
 
 Fokus utama saya adalah merancang arsitektur perangkat lunak yang terstruktur, mudah dipelihara, dan selaras dengan tujuan bisnis. Saya memadukan keahlian teknis dengan komunikasi proaktif untuk memastikan setiap proyek memberikan kejelasan logika serta dampak nyata bagi pengguna.
         </p>

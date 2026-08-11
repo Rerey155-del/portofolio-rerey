@@ -87,7 +87,7 @@ export default function AboutPage() {
         <div className="border-t border-dashed border-border my-6"></div>
         <div className="space-y-4 text-sm leading-relaxed text-foreground/90">
           <p>
-            Halo, saya Reyhan Maulana, seorang Software Engineer yang
+            Halo, saya Reyhan Maulana, seorang Software Developer yang
             berdedikasi untuk menciptakan solusi digital berdampak luas. Saya
             spesialis dalam membangun platform web dan aplikasi mobile
             menggunakan teknologi modern, termasuk Laravel, Next.js, dan
@@ -149,7 +149,13 @@ export default function AboutPage() {
 // Sub-Komponen dengan Logic State
 // ==========================================
 
-function CareerCard({ job, index = 0 }: { job: (typeof CAREER_DATA)[0]; index?: number }) {
+function CareerCard({
+  job,
+  index = 0,
+}: {
+  job: (typeof CAREER_DATA)[0];
+  index?: number;
+}) {
   // STATE: Untuk mengontrol detail yang terbuka
   const [isOpen, setIsOpen] = useState(false);
 

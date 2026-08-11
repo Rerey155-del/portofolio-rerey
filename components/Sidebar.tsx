@@ -63,7 +63,7 @@ export function Sidebar() {
         {/* Profile Info */}
         <div className="flex flex-col items-center mb-6 mt-8 md:mt-0">
           <Avatar className="w-24 h-24 mb-3">
-            <AvatarImage src="/avatar.webp" />
+            <AvatarImage src="/avatar.png" />
             <AvatarFallback>RM</AvatarFallback>
           </Avatar>
           <div className="flex items-center gap-1 mb-2">
