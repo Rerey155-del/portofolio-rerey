@@ -1,4 +1,3 @@
-// components/Sidebar.tsx
 "use client";
 
 import { useState } from "react";
@@ -13,13 +12,16 @@ import {
   Link as LinkIcon,
   List,
   X,
+  MagnifyingGlassPlus,
 } from "@phosphor-icons/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { ImageZoomModal } from "@/components/ImageZoomModal";
 
 export function Sidebar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const [isAvatarZoomed, setIsAvatarZoomed] = useState(false);
 
   return (
     <>
@@ -62,10 +64,21 @@ export function Sidebar() {
 
         {/* Profile Info */}
         <div className="flex flex-col items-center mb-6 mt-8 md:mt-0">
-          <Avatar className="w-24 h-24 mb-3">
-            <AvatarImage src="/avatar.png" />
-            <AvatarFallback>RM</AvatarFallback>
-          </Avatar>
+          <div
+            onClick={() => setIsAvatarZoomed(true)}
+            className="relative group cursor-pointer mb-3 rounded-full p-0.5 transition-all duration-300 hover:ring-4 hover:ring-primary/20"
+            title="Klik untuk memperbesar foto"
+          >
+            <Avatar className="w-24 h-24 transition-transform duration-300 group-hover:scale-105">
+              <AvatarImage src="/avatar.png" alt="Reyhan Maulana" />
+              <AvatarFallback>RM</AvatarFallback>
+            </Avatar>
+            {/* Overlay hint icon saat hover */}
+            <div className="absolute inset-0 bg-black/40 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+              <MagnifyingGlassPlus size={24} className="text-white drop-shadow-md" weight="bold" />
+            </div>
+          </div>
+
           <div className="flex items-center gap-1 mb-2">
             <h2 className="font-semibold text-lg">Reyhan Maulana</h2>
           </div>
@@ -118,6 +131,15 @@ export function Sidebar() {
           </div>
         </div>
       </aside>
+
+      {/* Modal Zoom Foto Profil */}
+      <ImageZoomModal
+        isOpen={isAvatarZoomed}
+        onClose={() => setIsAvatarZoomed(false)}
+        imageSrc="/avatar.png"
+        altText="Foto Profil Reyhan Maulana"
+        caption="Reyhan Maulana"
+      />
     </>
   );
 }

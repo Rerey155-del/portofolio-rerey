@@ -45,7 +45,7 @@ export function HomeContent() {
     : SKILLS_DATA.filter((s) => s.category === activeCategory);
 
   return (
-    <div className="p-8 md:p-12 pb-24 space-y-12">
+    <div className="px-4 py-8 pt-16 sm:px-8 md:p-12 pb-24 space-y-12">
       {/* 1. HERO SECTION */}
       <section className="space-y-4" data-aos="fade-up">
         <h1 className="text-4xl font-bold tracking-tight">Hi, saya Reyhan Maulana</h1>

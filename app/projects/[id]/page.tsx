@@ -33,16 +33,16 @@ export default async function ProjectDetailPage({
     project.images.length > 0 ? project.images : [project.image];
 
   return (
-    <div className="p-8 md:p-12 pb-24 space-y-8">
+    <div className="px-4 py-6 pt-16 sm:px-8 md:p-12 pb-24 space-y-8">
       <div
         className="flex items-center gap-3 text-sm text-muted-foreground"
         data-aos="fade-down"
       >
         <Link
           href="/projects"
-          className="inline-flex items-center gap-2 text-primary hover:text-foreground transition-colors"
+          className="inline-flex items-center gap-2 text-primary hover:text-foreground transition-colors font-medium"
         >
-          Kembali ke Proyek
+          ← Kembali ke Proyek
         </Link>
       </div>
 

@@ -4,7 +4,7 @@ import { PROJECTS_DATA } from "@/app/projects/data";
 
 export default function ProjectsPage() {
   return (
-    <div className="px-12 py-10 md:px-24 md:py-16 pb-28 space-y-12">
+    <div className="px-4 py-8 pt-16 sm:px-8 md:px-16 lg:px-24 md:py-16 pb-28 space-y-12">
       <section data-aos="fade-up">
         <h1 className="text-3xl font-bold tracking-tight mb-2">Project Us</h1>
         <p className="text-muted-foreground text-sm max-w-2xl leading-relaxed">
@@ -31,15 +31,15 @@ function ProjectCard({ project, index = 0 }: { project: typeof PROJECTS_DATA[0];
       data-aos-delay={index * 150}
       className="group grid overflow-hidden rounded-3xl border border-border/50 bg-card hover:shadow-xl hover:border-primary/20 transition-all duration-300 md:grid-cols-[minmax(280px,42%)_1fr]"
     >
-      <div className="relative h-64 overflow-hidden bg-muted md:h-full md:min-h-72">
+      <div className="relative h-56 sm:h-64 md:h-full md:min-h-72 overflow-hidden bg-muted/30 p-3 sm:p-4 flex items-center justify-center">
         <img
           src={project.image}
           alt={project.title}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          className="w-full h-full object-cover rounded-2xl shadow-sm transition-transform duration-500 group-hover:scale-105"
         />
       </div>
 
-      <CardContent className="px-10 py-8 space-y-5 md:px-12 md:py-10">
+      <CardContent className="px-6 py-6 sm:px-10 sm:py-8 space-y-5 md:px-12 md:py-10">
         <div>
           <div className="flex items-center gap-2 mb-2">
             <h3 className="text-xl font-bold group-hover:text-primary transition-colors">{project.title}</h3>

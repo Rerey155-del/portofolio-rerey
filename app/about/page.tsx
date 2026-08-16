@@ -75,7 +75,7 @@ const EDUCATION_DATA = [
 
 export default function AboutPage() {
   return (
-    <div className="p-8 md:p-12 pb-24 space-y-12">
+    <div className="px-4 py-8 pt-16 sm:px-8 md:p-12 pb-24 space-y-12">
       {/* SECTION TENTANG */}
       <section data-aos="fade-up">
         <div className="mb-4">

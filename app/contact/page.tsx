@@ -46,7 +46,7 @@ const SOCIALS_DATA = [
 // ==========================================
 export default function ContactPage() {
   return (
-    <div className="p-8 md:p-12 pb-24 space-y-10">
+    <div className="px-4 py-8 pt-16 sm:px-8 md:p-12 pb-24 space-y-10">
       {/* HEADER */}
       <section data-aos="fade-down">
         <h1 className="text-3xl font-bold tracking-tight mb-2">Contact</h1>
