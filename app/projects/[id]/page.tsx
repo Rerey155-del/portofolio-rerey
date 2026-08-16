@@ -42,7 +42,7 @@ export default async function ProjectDetailPage({
           href="/projects"
           className="inline-flex items-center gap-2 text-primary hover:text-foreground transition-colors font-medium"
         >
-          ← Kembali ke Proyek
+          Kembali ke Proyek
         </Link>
       </div>
 
