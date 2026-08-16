@@ -181,7 +181,7 @@ export function ProjectCarousel({ images, title }: ProjectCarouselProps) {
                 <img
                   src={image}
                   alt={`${title} screenshot ${index + 1}`}
-                  className="max-h-full max-w-full object-contain rounded-lg shadow-md transition-transform duration-300 group-hover:scale-[1.02] pointer-events-none"
+                  className="max-h-full max-w-full object-contain rounded-lg shadow-md pointer-events-none"
                 />
                 <div className="absolute top-4 right-4 bg-black/60 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm shadow-md pointer-events-none">
                   <Maximize2 className="size-4" />
