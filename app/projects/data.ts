@@ -37,7 +37,6 @@ export const PROJECTS_DATA: ProjectData[] = [
     title: "Manajemen Sekolah v3",
     description:
       "Sistem Manajemen Sekolah berbasis web modern yang dibangun menggunakan Decouple Architecture. Sistem ini dirancang untuk mengelola berbagai entitas sekolah seperti Guru, Siswa, Kelas, Mata Pelajaran, jabwal, hingga Log Aktivitas dan sistem pengumuman terpusat yang memanfaatkan teknologi Apache Kafka. ",
-
     image: "/manajemen1.png",
     images: ["/manajemen1.png", "/manajemen2.png", "/manajemen3.png"],
     type: "Web",
@@ -103,6 +102,30 @@ export const PROJECTS_DATA: ProjectData[] = [
     type: "Web",
     category: "Election System",
     tech: ["Laravel", "Vite", "Tailwind CSS", "MySQL"],
+    link: "#",
+    github: "#",
+    isFeatured: true,
+    thumbnail: true,
+  },
+  {
+    id: 7,
+    title: "PlayHub - PlayStation Rental Management System",
+    description:
+      "Aplikasi manajemen rental PlayStation modern berbasis web yang dibangun menggunakan Laravel dan didesain dengan gaya visual Neobrutalism UI serta animasi interaktif AOS.js (Animate On Scroll).",
+    detail:
+      "Aplikasi ini menyediakan dua pengalaman utama: Portal Pengguna (Customer Portal) yang responsif dan interaktif untuk penyewaan unit di tempat (on-site), serta Dashboard Admin untuk mengelola inventaris unit PlayStation dan data transaksi booking.",
+    image: "/ps1.jpeg",
+    images: [
+      "/ps1.jpeg",
+      "/ps2.jpeg",
+      "/ps3.jpeg",
+      "/ps4.jpeg",
+      "/ps5.jpeg",
+      "/ps6.jpeg",
+    ],
+    type: "Web",
+    category: "Rental Management",
+    tech: ["Laravel", "Vite", "Tailwind CSS", "MySQL", "AOS.js"],
     link: "#",
     github: "#",
     isFeatured: true,

@@ -1,8 +1,8 @@
-// app/layout.tsx
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import '@/app/globals.css'
 import { Sidebar } from '@/components/Sidebar'
+import { AOSInit } from '@/components/AOSInit'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,6 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.className} min-h-screen flex`}>
+        <AOSInit />
         <Sidebar />
         <main className="flex-1 w-full max-w-4xl mx-auto">
           {children}

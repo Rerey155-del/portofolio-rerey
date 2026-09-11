@@ -39,15 +39,6 @@ const SOCIALS_DATA = [
     icon: <LinkedinLogo size={60} weight="fill" />,
     gradient: "from-blue-600 to-blue-800",
   },
-  
-  {
-    title: "Explore the Code",
-    desc: "Explore my open-source work.",
-    cta: "Go to Github",
-    link: "https://github.com/username",
-    icon: <GithubLogo size={60} weight="fill" />,
-    gradient: "from-slate-900 to-slate-950",
-  },
 ];
 
 // ==========================================
@@ -55,9 +46,9 @@ const SOCIALS_DATA = [
 // ==========================================
 export default function ContactPage() {
   return (
-    <div className="p-8 md:p-12 pb-24 space-y-10">
+    <div className="px-4 py-8 pt-16 sm:px-8 md:p-12 pb-24 space-y-10">
       {/* HEADER */}
-      <section>
+      <section data-aos="fade-down">
         <h1 className="text-3xl font-bold tracking-tight mb-2">Contact</h1>
         <p className="text-muted-foreground text-sm">Let's get in touch.</p>
       </section>
@@ -65,13 +56,14 @@ export default function ContactPage() {
       <div className="border-t border-dashed border-border" />
 
       {/* SOCIAL MEDIA CARDS (Mapping) */}
-      <section className="space-y-6">
+      <section className="space-y-6" data-aos="fade-up">
         <h2 className="text-sm font-medium text-foreground">Find me on social media</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {SOCIALS_DATA.map((social, index) => (
             <SocialCard 
               key={index} 
+              index={index}
               {...social} 
             />
           ))}
@@ -79,7 +71,7 @@ export default function ContactPage() {
       </section>
 
       {/* CONTACT FORM SECTION */}
-      <section className="space-y-6 pt-6">
+      <section className="space-y-6 pt-6" data-aos="fade-up" data-aos-delay="200">
         <h2 className="text-sm font-medium text-foreground">Or send me a message</h2>
         
         <form className="space-y-4 max-w-4xl" onSubmit={(e) => e.preventDefault()}>
@@ -120,7 +112,8 @@ function SocialCard({
   link, 
   icon, 
   gradient, 
-  isWide 
+  isWide,
+  index = 0
 }: { 
   title: string; 
   desc: string; 
@@ -129,9 +122,14 @@ function SocialCard({
   icon: React.ReactNode; 
   gradient: string;
   isWide?: boolean;
+  index?: number;
 }) {
   return (
-    <div className={`relative overflow-hidden rounded-xl bg-gradient-to-br ${gradient} p-8 text-white shadow-lg group transition-transform hover:scale-[1.01] duration-300 ${isWide ? 'md:col-span-2' : ''}`}>
+    <div
+      data-aos="zoom-in"
+      data-aos-delay={index * 100}
+      className={`relative overflow-hidden rounded-xl bg-gradient-to-br ${gradient} p-8 text-white shadow-lg group transition-transform hover:scale-[1.01] duration-300 ${isWide ? 'md:col-span-2' : ''}`}
+    >
       {/* Konten Text */}
       <div className="relative z-10 space-y-2 max-w-[70%]">
         <h3 className="text-xl font-bold">{title}</h3>
