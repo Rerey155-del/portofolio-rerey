@@ -27,7 +27,7 @@ const CAREER_DATA = [
   {
     id: 3,
     logo: "💻",
-    title: "Application Developer",
+    title: "Fullstack Developer",
     company: "Inatechno Training Center",
     location: "Padang, Sumatera Barat",
     startDate: "Feb 2025",
