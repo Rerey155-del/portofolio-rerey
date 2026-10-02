@@ -21,7 +21,7 @@ export default function RootLayout({
       <body className={`${inter.className} min-h-screen flex`}>
         <AOSInit />
         <Sidebar />
-        <main className="flex-1 w-full max-w-4xl mx-auto">
+        <main className="flex-1 w-full max-w-4xl mx-auto min-w-0 transition-all duration-300 ease-in-out">
           {children}
         </main>
       </body>
