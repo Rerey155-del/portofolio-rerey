@@ -58,8 +58,8 @@ export function Sidebar() {
     const deltaX = e.changedTouches[0].clientX - touchStartX.current;
     const deltaY = e.changedTouches[0].clientY - touchStartY.current;
 
-    // Geser ke kiri minimal sejauh 40px dan dominan horizontal
-    if (deltaX < -40 && Math.abs(deltaX) > Math.abs(deltaY)) {
+    // Geser ke kiri minimal sejauh 30px dan dominan horizontal
+    if (deltaX < -30 && Math.abs(deltaX) > Math.abs(deltaY)) {
       setIsOpen(false);
     }
     touchStartX.current = null;
@@ -75,7 +75,7 @@ export function Sidebar() {
 
   return (
     <>
-      {/* Tombol Toggle Sidebar di pojok kiri atas (sesuai screenshot awal setelah reload) */}
+      {/* Tombol Toggle Sidebar di pojok kiri atas (selalu ada untuk buka/tutup) */}
       <Button
         variant="outline"
         size="icon"
@@ -84,6 +84,10 @@ export function Sidebar() {
           transition-all duration-300 hover:scale-105 hover:bg-accent hover:border-primary/40
         `}
         onClick={toggleSidebar}
+        onTouchEnd={(e) => {
+          e.preventDefault();
+          toggleSidebar();
+        }}
         title={isOpen ? "Sampingkan sidebar ke kiri (Ctrl+B)" : "Buka sidebar (Ctrl+B)"}
         aria-label={isOpen ? "Sampingkan sidebar ke kiri" : "Buka sidebar"}
       >
@@ -93,16 +97,23 @@ export function Sidebar() {
       {/* Overlay/Backdrop gelap saat sidebar terbuka di ponsel */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black/50 backdrop-blur-[2px] z-30 md:hidden transition-opacity duration-300 animate-in fade-in"
+          className="fixed inset-0 bg-black/50 backdrop-blur-[2px] z-30 md:hidden cursor-pointer transition-opacity duration-300 animate-in fade-in"
           onClick={() => setIsOpen(false)}
+          onTouchEnd={(e) => {
+            e.preventDefault();
+            setIsOpen(false);
+          }}
           aria-hidden="true"
         />
       )}
 
-      {/* Sidebar Panel dengan transisi geser dan kemampuan dikesampingkan ke kiri */}
+      {/* Sidebar Panel dengan inline style transform untuk jaminan kompatibilitas 100% di semua ponsel */}
       <aside
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
+        style={{
+          transform: isOpen ? "translateX(0)" : "translateX(-100%)",
+        }}
         className={`
           w-[280px] shrink-0 border-r bg-background h-screen p-6 flex flex-col overflow-y-auto
           fixed inset-y-0 left-0 z-40
@@ -110,11 +121,26 @@ export function Sidebar() {
           md:sticky md:top-0
           ${
             isOpen
-              ? "translate-x-0 md:ml-0 md:opacity-100 shadow-2xl md:shadow-none"
-              : "-translate-x-full md:-ml-[280px] md:opacity-0 md:pointer-events-none shadow-none"
+              ? "opacity-100 visible pointer-events-auto md:ml-0 shadow-2xl md:shadow-none"
+              : "opacity-0 invisible pointer-events-none md:-ml-[280px] shadow-none"
           }
         `}
       >
+        {/* Tombol Close alternatif di pojok kanan atas sidebar */}
+        <Button
+          variant="ghost"
+          size="icon"
+          className="absolute top-4 right-4 rounded-xl text-muted-foreground hover:text-foreground hover:bg-muted/80 transition-all duration-200"
+          onClick={() => setIsOpen(false)}
+          onTouchEnd={(e) => {
+            e.preventDefault();
+            setIsOpen(false);
+          }}
+          title="Sampingkan sidebar ke kiri (Ctrl+B)"
+          aria-label="Sampingkan sidebar ke kiri"
+        >
+          <X size={20} weight="bold" />
+        </Button>
 
         {/* Profile Info */}
         <div className="flex flex-col items-center mb-6 mt-10 md:mt-8">
