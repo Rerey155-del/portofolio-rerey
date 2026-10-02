@@ -125,22 +125,80 @@ Fokus utama saya adalah merancang arsitektur perangkat lunak yang terstruktur, m
 
 function GithubActivitySection({ username }: { username: string }) {
   const [data, setData] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+  const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
+    let isMounted = true;
     // API v4 jogruber (Stabil & Support banyak kontribusi)
     fetch(`https://github-contributions-api.jogruber.de/v4/${username}`)
-      .then((res) => res.json())
-      .then(setData)
-      .catch(console.error);
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to fetch contributions");
+        return res.json();
+      })
+      .then((result) => {
+        if (isMounted) {
+          if (result && Array.isArray(result.contributions)) {
+            setData(result);
+          } else {
+            setHasError(true);
+          }
+        }
+      })
+      .catch((err) => {
+        console.warn("GitHub contributions fetch error:", err);
+        if (isMounted) setHasError(true);
+      })
+      .finally(() => {
+        if (isMounted) setLoading(false);
+      });
+
+    return () => {
+      isMounted = false;
+    };
   }, [username]);
 
-  if (!data) return <div className="py-20 text-center animate-pulse text-muted-foreground italic">Fetching coding activity...</div>;
+  if (loading) {
+    return (
+      <div className="py-20 text-center animate-pulse text-muted-foreground italic">
+        Fetching coding activity...
+      </div>
+    );
+  }
+
+  // Jika gagal memuat atau data tidak valid, tampilkan fallback yang aman agar tidak crash
+  if (hasError || !data || !Array.isArray(data.contributions)) {
+    return (
+      <section className="space-y-4">
+        <div className="flex justify-between items-center px-1">
+          <h2 className="text-base font-semibold text-foreground">
+            GitHub Activity
+          </h2>
+        </div>
+        <Card className="border border-border/60 bg-[#0d1117] text-[#c9d1d9] p-6 text-center shadow-sm">
+          <p className="text-sm text-muted-foreground mb-3">
+            Aktivitas GitHub saat ini sedang tidak dapat dimuat atau dibatasi koneksi.
+          </p>
+          <a
+            href={`https://github.com/${username}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs text-blue-400 hover:underline inline-flex items-center gap-1 font-medium"
+          >
+            Lihat langsung di profil GitHub @{username} →
+          </a>
+        </Card>
+      </section>
+    );
+  }
 
   const currentYear = new Date().getFullYear();
   const total = typeof data.total === "object" ? data.total?.[currentYear] ?? 0 : data.total ?? 0;
   
-  // Ambil kontribusi tahun ini
-  const currentYearData = data.contributions.filter((d: any) => d.date.startsWith(currentYear.toString()));
+  // Ambil kontribusi tahun ini secara aman
+  const currentYearData = (data.contributions || []).filter((d: any) =>
+    d?.date?.startsWith(currentYear.toString())
+  );
   
   // Logic Grouping per Minggu (7 Hari)
   const weeks: any[] = [];
@@ -199,8 +257,9 @@ function GithubActivitySection({ username }: { username: string }) {
 
           {/* Footer Card */}
           <div className="flex justify-between items-center pt-4 mt-2">
-             <a href="https://github.com/rerey155-del" 
+             <a href={`https://github.com/${username}`} 
                 target="_blank" 
+                rel="noopener noreferrer"
                 className="text-[11px] text-muted-foreground hover:text-blue-400 transition-colors">
                 Learn how we count contributions
              </a>
