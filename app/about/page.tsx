@@ -22,7 +22,7 @@ const CAREER_DATA = [
     type: "Project Based",
     workplace: "Offline",
     description:
-      "Bertanggung jawab sebagai pemimpin dalam pengembangan web startup kelolainaja.id dari tahap awal hingga implementasi. Memberikan arahan teknis dan menjaga kolaborasi efektif antar anggota tim selama proses pengembangan. Mengatur pembagian tugas, timeline, dan koordinasi tim pengembang agar proyek berjalan sesuai target.  ",
+      "Mengelola alur kerja pengembangan perangkat lunak (SDLC) dan pelaksanaan modul pelatihan teknologi. Bertanggung jawab menyusun jadwal kerja (timeline), membagi tugas teknis ke anggota tim, dan memantau pemenuhan milestone proyek secara berkala. Berperan aktif menerjemahkan kebutuhan pengguna menjadi rincian spesifikasi sistem, mengawal pengujian fitur agar bebas kendala, serta menyusun dokumentasi teknis dan laporan evaluasi proyek secara terstruktur.",
   },
   {
     id: 3,
@@ -36,12 +36,12 @@ const CAREER_DATA = [
     type: "Internship",
     workplace: "Hybrid",
     description:
-      "Berperan sebagai Fullstack Developer dalam proyek pengembangan web kelolainaja.id. Melakukan integrasi API, autentikasi pengguna, dan menajemen data berbasis dashboard. Berkontribusi dalam pengujian aplikasi, debugging, dan dokumentasi teknis proyek. ",
+      "Mengembangkan aplikasi berbasis web untuk platform startup internal perusahaan menggunakan Laravel, PHP, JavaScript, dan MySQL. Bertanggung jawab melakukan implementasi fitur, integrasi basis data, debugging, optimasi performa, serta pemeliharaan sistem secara berkala. Terlibat aktif dalam proses analisis kebutuhan operasional, pengujian aplikasi (testing), dan penyusunan dokumentasi teknis selama siklus pengembangan produk.",
   },
   {
     id: 4,
     logo: "🏢",
-    title: "Kasir/POS System Operator",
+    title: "Operational Quality & Store Administrator",
     company: "Nazea Mart",
     location: "Padang, Sumatera Barat",
     startDate: "Agustus 2025",
@@ -50,7 +50,21 @@ const CAREER_DATA = [
     type: "Part-time",
     workplace: "Offline",
     description:
-      "Melakukan transaksi penjualan menggunakan sistem POS, membantu pelanggan dengan pertanyaan produk, dan mengelola inventaris harian. Berkontribusi dalam menjaga operasional toko berjalan lancar selama jam sibuk. ",
+      "Bertanggung jawab penuh terhadap akurasi pencatatan transaksi dan pengawasan inventaris stok harian guna meminimalisir selisih data dengan menggunakan Microsoft Excel, serta menerapkan standar operasional prosedur (SOP) yang ketat dalam pemeriksaan fisik barang masuk dan keluar untuk menjamin kualitas produk. Berperan aktif mengidentifikasi kendala operasional toko, menjalankan tindakan perbaikan cepat demi menjaga kelancaran alur layanan, serta berkoordinasi secara terstruktur dengan tim internal terkait ketidaksesuaian data maupun kendala teknis harian.",
+  },
+  {
+    id: 5,
+    logo: "🏢",
+    title: "Project Manager & Developer",
+    company: "Universitas Putra Indonesia YPTK Padang",
+    location: "Padang, Sumatera Barat",
+    startDate: "September 2025",
+    endDate: "Desember 2025",
+    duration: "4 Bulan",
+    type: "Freelance",
+    workplace: "Hybrid",
+    description:
+      "Berkolaborasi secara intensif serta memimpin alur kerja tim pengembang dan desainer dalam siklus pengembangan aplikasi web UKM IT kampus berbasis metodologi Agile/Scrum menggunakan arsitektur MERN Stack (MongoDB, Express.js, React.js, Node.js). Bertanggung jawab mengarahkan perencanaan proyek, menerjemahkan kebutuhan operasional organisasi menjadi spesifikasi teknis dan fungsionalitas kode yang nyata, merancang RESTful API, mengelola basis data NoSQL, serta mengawal pengujian sistem (unit & integration testing), debugging, dan penyusunan dokumentasi proyek demi menjamin ketercapaian milestone serta rilis produk digital kampus yang optimal dan tepat waktu.",
   },
 ];
 
@@ -87,20 +101,11 @@ export default function AboutPage() {
         <div className="border-t border-dashed border-border my-6"></div>
         <div className="space-y-4 text-sm leading-relaxed text-foreground/90">
           <p>
-            Halo, saya Reyhan Maulana, seorang Software Developer yang
-            berdedikasi untuk menciptakan solusi digital berdampak luas. Saya
-            spesialis dalam membangun platform web dan aplikasi mobile
-            menggunakan teknologi modern, termasuk Laravel, Next.js, dan
-            pengembangan lintas platform dengan Flutter. Fokus utama saya bukan
-            sekadar membuat kode yang berjalan, melainkan merancang arsitektur
-            perangkat lunak yang terstruktur, mudah dipelihara, dan skalabel
-            untuk memenuhi kebutuhan bisnis. Saya percaya bahwa kode berkualitas
-            tinggi harus berjalan selaras dengan efisiensi sistem dan kejelasan
-            logika. Saya memadukan keahlian teknis dengan komunikasi proaktif,
-            pola pikir kritis, dan manajemen waktu yang efektif. Saya terbiasa
-            bekerja dalam lingkungan kolaboratif dan memanfaatkan kemampuan
-            kepemimpinan untuk memastikan setiap proyek memberikan hasil optimal
-            serta dampak nyata bagi pengguna.
+            Halo, saya Reyhan Maulana, seorang lulusan S1 Teknik Informatika yang berdedikasi dalam pengembangan perangkat lunak, manajemen proyek, serta optimalisasi sistem operasional IT. Saya terbiasa membangun platform web dan aplikasi menggunakan teknologi modern seperti Laravel dan Next.js, dengan fokus pada arsitektur sistem yang terstruktur, skalabel, dan efisien.
+
+Bagi saya, solusi digital yang baik harus berjalan selaras dengan kebutuhan bisnis, ketelitian data, serta kepatuhan terhadap standar operasional prosedur (SOP). Oleh karena itu, saya memadukan keahlian teknis (hard skills) dengan kemampuan analisis, dokumentasi terstruktur, komunikasi proaktif, dan manajemen waktu yang efektif.
+
+Baik dalam peran pengembangan sistem maupun pengelolaan operasional, saya siap berkolaborasi secara terstruktur untuk memastikan setiap proyek memberikan hasil yang optimal dan berdampak nyata bagi perusahaan.
           </p>
           <div className="pt-4">
             <p className="mb-2 text-muted-foreground">Salam hangat,</p>
