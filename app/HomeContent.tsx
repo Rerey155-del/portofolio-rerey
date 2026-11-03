@@ -32,6 +32,8 @@ const SKILLS_DATA = [
   { icon: <span className="font-bold">N</span>, label: "Next.js", className: "bg-neutral-100 text-neutral-800", category: "Main" },
   { icon: <Hexagon className="text-green-600" />, label: "Node.js", className: "bg-green-100 text-green-800", category: "Backend" },
   { icon: <Database className="text-blue-500" />, label: "PostgreSQL", className: "bg-blue-50 text-blue-700", category: "Database" },
+  { icon: <Database className="text-green-500" />, label: "Springboot", className: "bg-green-50 text-green-700", category: "Database" },
+  { icon: <Database className="text-blue-500" />, label: "Golang", className: "bg-blue-50 text-blue-700", category: "Database" },
 ];
 
 const CATEGORIES = ["Semua", "Main", "Frontend", "Backend", "Database"];
