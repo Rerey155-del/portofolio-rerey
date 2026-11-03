@@ -50,7 +50,7 @@ export function HomeContent() {
       <section className="space-y-4" data-aos="fade-up">
         <h1 className="text-4xl font-bold tracking-tight">Hi, saya Reyhan Maulana</h1>
         <p className="text-muted-foreground max-w-2xl leading-relaxed">
-         Halo, saya Reyhan Maulana, seorang lulusan S1 Teknik Informatika yang berdedikasi dalam pengembangan perangkat lunak, manajemen proyek, serta optimalisasi sistem operasional IT. Saya terbiasa membangun platform web dan aplikasi menggunakan teknologi modern seperti Laravel dan Next.js, dengan fokus pada arsitektur sistem yang terstruktur, skalabel, dan efisien.
+        Seorang lulusan S1 Teknik Informatika yang berdedikasi dalam pengembangan perangkat lunak, manajemen proyek, serta optimalisasi sistem operasional IT. Saya terbiasa membangun platform web dan aplikasi menggunakan teknologi modern seperti Laravel dan Next.js, dengan fokus pada arsitektur sistem yang terstruktur, skalabel, dan efisien.
 
 Bagi saya, solusi digital yang baik harus berjalan selaras dengan kebutuhan bisnis, ketelitian data, serta kepatuhan terhadap standar operasional prosedur (SOP). Oleh karena itu, saya memadukan keahlian teknis (hard skills) dengan kemampuan analisis, dokumentasi terstruktur, komunikasi proaktif, dan manajemen waktu yang efektif.
 
